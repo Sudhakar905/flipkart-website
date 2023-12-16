@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>flipkart</title>
+    <style type="text/css">
+        body {
+            background-color: whitesmoke;
+            overflow-x: hidden;
+        }
+
+        .div1 {
+            background-color: ghostwhite;
+            height: 70px;
+            text-align: center;
+        }
+
+        .flipkartlogo {
+            height: 50px;
+            width: 180px;
+            float: left;
+            margin-top: 5px;
+            margin-left: 70px;
+        }
+
+        .search {
+            float: left;
+            margin-left: 20PX;
+            margin-top: 17px;
+            width: 650px;
+            height: 20px;
+            background-color: whitesmoke;
+        }
+
+        .loginimg {
+            float: left;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .login {
+            float: left;
+            margin-left: 0px;
+            margin-top: 17px;
+            width: 30px;
+            height: 22px;
+            border: none;
+            background-color: ghostwhite;
+            font-size: 18px;
+        }
+
+        .cart {
+            float: left;
+            margin-top: 16px;
+            margin-left: 50px;
+        }
+
+        .carttype {
+            background-color: ghostwhite;
+            border: none;
+            margin-left: ;
+            margin-top: 18px;
+            float: left;
+            font-size: 18px;
+        }
+
+        .seller {
+            float: left;
+            margin-top: 16px;
+            margin-left: 50px;
+        }
+
+        .sellertype {
+            background-color: ghostwhite;
+            border: none;
+            margin-left: ;
+            margin-top: 18px;
+            float: left;
+            font-size: 18px;
+        }
+
+        .two {
+            background-color: ghostwhite;
+            padding: 10px;
+            height: 120px;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .two > div {
+            float: left;
+            width: calc(10% - 20px);
+            text-align: center;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        .two img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            text-decoration: none;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: auto;
+            margin-top: 22px;
+        }
+
+        .images {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .images img {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
+        .dot{
+        	margin-top: 16px;
+        	margin-left: 50px;
+        	float: left;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .login-container {
+            position: relative;
+            display: inline-block;
+            float: left;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: ghostwhite;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #f9f9f9;
+        }
+
+        .group-divider {
+            border-top: 1px solid #ccc;
+            margin: 6px 0;
+        }
+        .image-container {
+            width: 100%;
+            overflow-x: hidden; 
+            white-space: nowrap; 
+            margin-top: 30px;
+        }
+        .product-slider-heading {
+    text-align: center;
+}
+
+
+.p-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.glider {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-box {
+    width: 300px; /* Adjust this according to your layout */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    background-color: #fff; /* Ensure a white background */
+}
+
+.p-img-container {
+    position: relative;
+    height: 200px; /* Adjust according to your image size */
+    overflow: hidden;
+}
+
+.p-img {
+    width: 100%;
+    height: 100%;
+}
+
+.p-img img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.p-img img:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.p-img img:last-child {
+    transform: translateY(100%);
+}
+
+.product-category {
+    font-size: 14px;
+    color: #888;
+}
+
+.product-title {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    margin: 5px 0;
+}
+
+.p-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f00; /* Adjust the color */
+}
+
+.p-buy-btn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff; /* Button color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.p-buy-btn:hover {
+    background-color: #0056b3; /* Hover color */
+}
+
+        footer {
+           background-color:rgb(144, 144, 158);
+            padding: 20px;
+            text-align:left;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        footer p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        footer a {
+            text-decoration: none;
+            color: #333;
+        }
+        footer a:hover {
+            text-decoration: none;
+        } 
+    </style>
+</head>
+<body>
+<div class="div1">
+    <img src="flipkart.svg" class="flipkartlogo">
+    <input type="text" placeholder="Search for Product,Brands and More" class="search">
+    <img src="flipkartlogin.svg" class="loginimg">
+    <div class="login-container">
+        <button class="login" onmouseover="showDropdown()" onmouseleave="hideDropdown()">Login</button>
+    
+    <div class="dropdown" id="loginDropdown">
+        <div class="dropdown-content">
+           
+            <a href="#" class="grouped">New Customer?  <button class="signup">Signup
+            </button></a>
+            <div class="group-divider"></div>
+            <a href="#">My Profile</a>
+            <a href="#">Flipkart Plus Zone</a> 
+            <a href="#">Orders</a>
+            <a href="#">Wishlist</a>
+            <a href="#">Rewards</a>
+            <a href="#">Gift Cards</a>
+        </div>
+        </div>
+    </div>
+    <div class="four">
+        <a href="mam.html">
+            <img src="cart.svg" class="cart" >  
+              <button type="submit" class="carttype">Cart</button></a></div>
+    <img src="seller.svg" class="seller">
+    <button type="submit" class="sellertype">Become a Seller</button>
+    <img src="dot.svg" class="dot">
+</div>
+<div class="two">
+    <div class="offer">
+    	<a href="offer.html" style="text-decoration:none;">
+
+        <img src="offerimg.webp">
+        <p>Top offers</p></a>
+    </div>
+    <div class="mobile">
+    	<a href="mobile.html" style="text-decoration:none;">
+        <img src="mobileimg.webp">
+        <p>Mobile & Tablets</p></a>
+    </div>
+    <div class="electronics">
+    	<a href="electronics.html" style="text-decoration: none;">
+        <img src="electronics.webp">
+        <p>Electronics</p>
+        </a>
+    </div>
+    <div class="tv">
+    	<a href="tv.html" style="text-decoration:none;">
+        <img src="tvimg.webp">
+        <p>Tv & Appliances</p></a>
+    </div>
+    <div class="fashion">
+    	<a href="fashion.html" style="text-decoration:none;">
+        <img src="fashion.webp">
+        <p>Fashion</p></a>
+    </div>
+    <div class="beauty">
+    	<a href="beauty.html" style="text-decoration:none;">
+        <img src="beauty.webp">
+        <p>Beauty</p></a>
+    </div>
+    <div class="home">
+    	<a href="home.html" style="text-decoration:none;">
+        <img src="homeimg.webp">
+        <p>Home & Kitchen</p></a>
+    </div>
+    <div class="furniture">
+    	<a href="furniture.html" style="text-decoration:none;">
+        <img src="furniture.webp">
+        <p>Furniture</p></a>
+    </div>
+    <div class="flights">
+    	<a href="flight.html" style="text-decoration:none;">
+        <img src="flights.webp">
+        <p>Flights</p></a>
+    </div>
+    <div class="grocery"><a href="offer.html" style="text-decoration:none;">
+        <img src="groceryimg.webp">
+        <p>Grocery</p></a>
+    </div>
+</div>
+<div class="carousel">
+    <div class="images">
+        <img src="img1.webp" alt="Image 1">
+        <img src="img2.webp" alt="Image 2">
+        <img src="img3.webp" alt="Image 3">
+        <img src="img4.webp" alt="Image 4">
+        <img src="img5.webp" alt="Image 5">
+        <img src="img6.webp" alt="Image 6">
+        <img src="img7.webp" alt="Image 7">
+    </div>
+    <button class="prev" onclick="prevImage()">❮</button>
+    <button class="next" onclick="nextImage()">❯</button>
+</div>
+<div class="image-container1">
+        <img src="apply.webp" alt="Apply">
+    </div><div class="five">
+        
+        <section class="p-slider">
+           
+            <h4 class="product-slider-heading">Best of Electronics</h4>
+            <div class="glider-contain">
+                <div class="glider">
+                    
+                 
+<div class="product-box">
+    <span class="p-discount">-10%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="ph2.webp" class="p-img-front" alt="Front">
+                <img src="ph2.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Camera</span>
+        </div>
+        <a href="#" class="product-title">
+            Canon EOS M50 Mark
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹59,990</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+<div class="product-box">
+    <span class="p-discount">-20%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="ph3.webp" class="p-img-front" alt="Front">
+                <img src="ph3.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 3</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 3 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹149</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="product-box">
+    <span class="p-discount">-25%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="ph4.webp" class="p-img-front" alt="Front">
+                <img src="ph4.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 4</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 4 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹169</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="product-box">
+    <span class="p-discount">-30%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="ph5.webp" class="p-img-front" alt="Front">
+                <img src="ph5.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 5</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 5 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹199</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<!-- Product Box 6 (ph6) -->
+<div class="product-box">
+    <span class="p-discount">-35%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="ph6.webp" class="p-img-front" alt="Front">
+                <img src="ph6.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 6</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 6 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹219</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="product-box">
+    <span class="p-discount">-40%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="ph7.webp" class="p-img-front" alt="Front">
+                <img src="ph7.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 7</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 7 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹229</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="product-box">
+    <span class="p-discount">-45%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="ph8.webp" class="p-img-front" alt="Front">
+                <img src="ph8.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 8</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 8 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹239</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+<button aria-label="Previous" class="glider-prev" onclick="prevSlide()"><span class="fas fa-angle-left"></span></button>
+                <button aria-label="Next" class="glider-next" onclick="nextSlide()"><span class="fas fa-angle-right"></span></button>
+            </div>
+        </section>
+    </div>
+
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.images img');
+
+    function showImage(index) {
+        images.forEach(image => image.style.display = 'none');
+        images[index].style.display = 'block';
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    setTimeout(() => {
+        setInterval(nextImage, 2000);
+    }, 0);
+</script>
+<script>
+    function showDropdown() {
+        document.getElementById("loginDropdown").style.display = "block";
+    }
+
+    function hideDropdown() {
+        document.getElementById("loginDropdown").style.display = "none";
+    }
+</script>
+<footer>
+        <p>Flipkart: The One-stop Shopping Destination</p>
+        <p>E-commerce is revolutionizing the way we all shop in India. Why do you want to hop from one store to another in search of the latest phone when you can find it on the Internet in a single click? Not only mobiles. Flipkart houses everything you can possibly imagine, from trending electronics like laptops, tablets, smartphones, and mobile accessories to in-vogue fashion staples like shoes, clothing and lifestyle accessories; from modern furniture like sofa sets, dining tables, and wardrobes to appliances that make your life easy like washing machines, TVs, ACs, mixer grinder juicers and other time-saving kitchen and small appliances; from home furnishings like cushion covers, mattresses and bedsheets to toys and musical instruments, we got them all covered. You name it, and you can stay assured about finding them all here. For those of you with erratic working hours, Flipkart is your best bet. Shop in your PJs, at night or in the wee hours of the morning. This e-commerce never shuts down.</p>
+        <p>What's more, with our year-round shopping festivals and events, our prices are irresistible. We're sure you'll find yourself picking up more than what you had in mind. If you are wondering why you should shop from Flipkart when there are multiple options available to you, well, the below will answer your question.</p>
+        
+        <p>Flipkart Plus</p>
+        <p>A world of limitless possibilities awaits you - Flipkart Plus was kickstarted as a loyalty reward programme for all its regular customers at zero subscription fee...</p>
+        
+        <p>No Cost EMI</p>
+        <p>In an attempt to make high-end products accessible to all, our No Cost EMI plan enables you to shop with us under EMI, without shelling out any processing fee...</p>
+        
+        <p>EMI on Debit Cards</p>
+        <p>Did you know debit card holders account for 79.38 crore in the country, while there are only 3.14 crore credit card holders? After enabling EMI on Credit Cards...</p>
+       
+        <p>Mobile Exchange Offers</p>
+        <p>Get an instant discount on the phone that you have been eyeing on. Exchange your old mobile for a new one after the Flipkart experts calculate the value of your old phone...</p>
+        
+        <p>What Can You Buy From Flipkart?</p>
+        <p>Mobile Phones</p>
+        <p>From budget phones to state-of-the-art smartphones, we have a mobile for everybody out there. Whether you're looking for larger, fuller screens, power-packed batteries...</p>
+        
+    </footer>
+</body>
+</html>

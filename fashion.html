@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Top offer</title>
+	<style type="text/css">
+	body {
+            background-color: whitesmoke;
+            font-family: Arial, sans-serif;
+        }
+
+        .one {
+            background-color: rgb(24, 54, 186);;
+            height: 70px;
+            text-align: center;
+        }
+
+        .flipkartlogo {
+            height: 50px;
+            width: 180px;
+            float: left;
+            margin-top: 5px;
+            margin-left: 70px;
+            cursor: pointer; 
+        }
+
+        .search {
+            float: left;
+            margin-left: 20px; 
+            margin-top: 17px;
+            width: 650px;
+            height: 20px;
+            background-color: whitesmoke;
+        }
+
+        .login {
+            margin-top: 19px;
+            background-color: white;
+            color: blue;
+            border: none;
+            cursor: pointer;
+            float: left;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        .sellertype{
+        	float: left;
+        	margin-top: 20px;
+        	margin-left: 20px;
+        	 border: none;
+        	 background-color:rgb(24, 54, 186);;
+        	 font-size: 18px;
+        	 color: white;
+
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            float: left;
+            margin-top: 18px;
+            margin-left: 10px;
+            color: blue;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .cart {
+            float: left;
+            margin-top: 18px;
+            margin-left: 50px;
+            background-color: white;
+        }
+
+        .carttype {
+            background-color: ghostwhite;
+            border: none;
+            margin-left: ;
+            margin-top: 18px;
+            float: left;
+            font-size: 18px;
+        }
+        .bigsale {
+   width: 1000px;
+   height: 400px;
+   float: left;
+   margin-left: 200px;
+margin-top: 10px;
+
+}
+
+.topdeals {
+   width: 400px;
+   height: 300px;
+   float: left;
+   margin-top: 10px;
+   margin-left: 400px;
+
+}
+
+.phone {
+   width: 800px;
+   height: 500px;
+   float: left;
+   margin-top: 10px;
+   margin-left: 200PX;
+
+}
+
+.fashion {
+   width: 800px;
+   height: 500px;
+   float: left;
+   margin-top: 10px;
+   margin-left: 200PX;
+}
+.five{
+    width: 200px;
+        height: 80px;
+   
+}
+/* Additional CSS */
+.more {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: blue;
+}
+
+/* Ensure proper alignment of the products */
+.product-slider-heading {
+    text-align: center;
+}
+
+/* Adjust styles for the product boxes */
+.p-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.glider {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-box {
+    width: 300px; /* Adjust this according to your layout */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ccc; /* Add a border for better visibility */
+    background-color: #fff; /* Ensure a white background */
+}
+
+.p-img-container {
+    position: relative;
+    height: 200px; /* Adjust according to your image size */
+    overflow: hidden;
+}
+
+.p-img {
+    width: 100%;
+    height: 100%;
+}
+
+.p-img img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.p-img img:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.p-img img:last-child {
+    transform: translateY(100%);
+}
+
+.product-category {
+    font-size: 14px;
+    color: #888;
+}
+
+.product-title {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    margin: 5px 0;
+}
+
+.p-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f00; /* Adjust the color */
+}
+
+.p-buy-btn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff; /* Button color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.p-buy-btn:hover {
+    background-color: #0056b3; /* Hover color */
+}
+
+</style>
+</head>
+<body>
+<div class="one">
+    <img src="flipkart2.png" class="flipkartlogo" onclick="showFlipkart()">
+    <input type="text" placeholder="Search for Product, Brands and More" class="search">
+    <button class="login">Login</button>
+    <button type="submit" class="sellertype">Become a Seller</button>
+    <div class="dropdown">
+            <button class="more">More</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showNotification()">Notification</a>
+                <a href="#" onclick="customerService()">24*7 Customer Service</a>
+                <a href="#" onclick="advertisement()">Advertisement</a>
+                <a href="#" onclick="downloadApp()">Download App</a>
+            </div>
+        </div>
+        <img src="cart.svg" class="cart" onclick="goToCart()">
+        <a href="mam.html">
+        <button class="carttype" onclick="goToCart()">Cart</button></a>
+    </div>
+
+    
+    <div id="notificationContainer" style="display: none;">
+       
+        <p>Notification: This is a notification message.</p>
+        <p>24*7 Customer Service</p>
+        <p>Advertisement</p>
+    </div>
+    <div class="four">
+        
+        <section class="p-slider">
+           
+            <h4 class="product-slider-heading">Best of Fashion</h4>
+            <div class="glider-contain">
+                <div class="glider">
+                    
+                 
+<div class="product-box">
+    <span class="p-discount">-10%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="d2.webp" class="p-img-front" alt="Front">
+                <img src="d2.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>shirt</span>
+        </div>
+        <a href="#" class="product-title">
+            Mens Shirt
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹1,990</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+<div class="product-box">
+    <span class="p-discount">-20%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="d3.webp" class="p-img-front" alt="Front">
+                <img src="d3.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 3</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 3 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹1,000</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="product-box">
+    <span class="p-discount">-25%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="d9.webp" class="p-img-front" alt="Front">
+                <img src="d9.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 4</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 4 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹1,999</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="product-box">
+    <span class="p-discount">-30%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="d5.webp" class="p-img-front" alt="Front">
+                <img src="d5.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 5</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 5 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹2,899</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="product-box">
+    <span class="p-discount">-35%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="d6.webp" class="p-img-front" alt="Front">
+                <img src="d6.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 6</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 6 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹1,999</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="product-box">
+    <span class="p-discount">-40%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="d7.webp" class="p-img-front" alt="Front">
+                <img src="d7.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 7</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 7 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹529</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="product-box">
+    <span class="p-discount">-45%</span>
+    <div class="p-img-container">
+        <div class="p-img">
+            <a href="#">
+                <img src="d8.webp" class="p-img-front" alt="Front">
+                <img src="d8.webp" alt="Back" class="p-img-back">
+            </a>
+        </div>
+    </div>
+    <div class="p-box-text">
+        <div class="product-category">
+            <span>Category 8</span>
+        </div>
+        <a href="#" class="product-title">
+            Product 8 Title
+        </a>
+        <div class="price-buy">
+            <span class="p-price">₹99</span>
+            <button class="p-buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+<button aria-label="Previous" class="glider-prev" onclick="prevSlide()"><span class="fas fa-angle-left"></span></button>
+                <button aria-label="Next" class="glider-next" onclick="nextSlide()"><span class="fas fa-angle-right"></span></button>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <script>
+        let currentIndex = 0;
+        const totalSlides = 6; 
+
+        function nextSlide() {
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlide();
+            }
+        }
+
+        function updateSlide() {
+            const glider = document.querySelector('.glider');
+            const slideWidth = 100; // Assuming each slide takes 100px width
+
+            glider.style.transform = `translateX(-${slideWidth * currentIndex}%)`;
+        }
+    </script>
+
+
+        </section>
+</div>
+    <script>
+        function showNotification() {
+            
+
+        function customerService() {
+           
+        }
+
+        function advertisement() {
+           
+        }
+
+        function downloadApp() {
+           
+        }
+
+        function goToCart() {
+            
+            window.location.href = "cart.html"; 
+        }
+    </script>
+</body>
+</html>

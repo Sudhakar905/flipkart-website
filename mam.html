@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cart</title>
+    <style type="text/css">
+        body {
+            background-color: whitesmoke;
+            font-family: Arial, sans-serif;
+        }
+
+        .one {
+            background-color: ghostwhite;
+            height: 70px;
+            text-align: center;
+        }
+
+        .flipkartlogo {
+            height: 50px;
+            width: 180px;
+            float: left;
+            margin-top: 5px;
+            margin-left: 70px;
+            cursor: pointer; 
+        }
+
+        .search {
+            float: left;
+            margin-left: 20px; 
+            margin-top: 17px;
+            width: 650px;
+            height: 20px;
+            background-color: whitesmoke;
+        }
+
+        button {
+            margin-top: 16px;
+            background-color: transparent;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        .two {
+            background-color: ghostwhite;
+            width: 1300px;
+            height: 60px;
+            margin-top: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        .flipkart {
+            display: inline-block;
+            margin-left: 200px;
+            margin-top: 10px;
+            cursor: pointer;
+            color: black;
+        }
+        .grocery {
+            display: inline-block;
+            margin-left: 810px;
+            margin-top: 10px;
+            cursor: pointer;
+            color: black;
+        }
+
+        .three {
+            text-align: center;
+            width: 700px;
+            height: 350px;
+            background-color: ghostwhite;
+            margin-top: 10px; 
+            margin-left: 400px;
+            margin-right: 300px;
+            position: relative;
+        }
+
+        .three img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            height: 200px;
+            width: 200px;
+            background-color: ghostwhite;
+        }
+
+        .flipkart-details,
+        .grocery-details {
+            position: absolute;
+            bottom: 20px; 
+            width: 100%;
+            text-align: center;
+            color: blue; 
+            display: none;
+        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+footer {
+    background-color:rgb(144, 144, 158);
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+footer p {
+    margin: 5px 0;
+}
+footer a {
+    text-decoration: none;
+    color: #333; 
+}
+footer a:hover {
+    text-decoration: underline; 
+}
+    </style>
+</head>
+<body>
+<div class="one">
+    <img src="flipkart.svg" class="flipkartlogo" onclick="showFlipkart()">
+    <input type="text" placeholder="Search for Product, Brands and More" class="search">
+    <button onclick="showLogin()">Login</button>
+</div>
+<div class="two">
+    <div class="flipkart" onclick="showFlipkartDetails(this)">
+        <p>Flipkart</p>
+    </div>
+    <div class="grocery" onclick="showGroceryDetails(this)">
+        <p>Grocery</p>
+    </div>
+</div>
+
+<div class="three">
+    <img src="computer.webp" alt="Flipkart Image" class="flipkart-details" >
+    <p class="flipkart-details">Additional details about Flipkart</p>
+    
+    <img src="basket.webp" alt="Grocery Image" class="grocery-details" >
+    <p class="grocery-details">Additional details about Grocery</p>
+</div>
+<footer>
+        <p>Policies: <a href="#">Returns Policy</a> | <a href="#">Terms of use</a> | <a href="#">Security</a> | <a href="#">Privacy</a> | <a href="#">Infringement</a></p>
+        <p>© 2007-2023 Flipkart.com</p>
+        <p>Need help? Visit the <a href="#">Help Center</a> or <a href="#">Contact Us</a></p>
+    </footer>
+<script>
+    function showFlipkartDetails(element) {
+        document.querySelectorAll('.flipkart-details').forEach(item => item.style.display = 'none');
+        document.querySelectorAll('.grocery-details').forEach(item => item.style.display = 'none');
+        document.querySelectorAll('.flipkart').forEach(item => item.style.color = 'black');
+        document.querySelectorAll('.grocery').forEach(item => item.style.color = 'black');
+        
+        const flipkartImages = document.querySelectorAll('.flipkart-details');
+        flipkartImages.forEach(image => image.style.display = 'block');
+        
+        element.style.color = 'blue';
+    }
+
+    function showGroceryDetails(element) {
+        document.querySelectorAll('.flipkart-details').forEach(item => item.style.display = 'none');
+        document.querySelectorAll('.grocery-details').forEach(item => item.style.display = 'none');
+        document.querySelectorAll('.flipkart').forEach(item => item.style.color = 'black');
+        document.querySelectorAll('.grocery').forEach(item => item.style.color = 'black');
+        
+        const groceryImages = document.querySelectorAll('.grocery-details');
+        groceryImages.forEach(image => image.style.display = 'block');
+        
+        element.style.color = 'blue';
+    }
+  
+    
+</script>
+</body>
+</html>
